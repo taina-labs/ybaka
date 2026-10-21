@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instalar o Tainá, passo a passo</title>
+    <meta
+      name="description"
+      content="Como colocar o Tainá no ar do zero, na máquina da comunidade ou numa VPS, em menos de 30 minutos."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/ybaka.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z' fill='%23f2a65a'/%3E%3C/svg%3E"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html">
+          <svg
+            class="brand__mark"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"
+              fill="currentColor"
+            />
+          </svg>
+          <span class="brand__name">Tainá</span>
+        </a>
+        <nav class="site-nav" aria-label="Principal">
+          <a class="site-nav__link site-nav__link--optional" href="index.html"
+            >Início</a
+          >
+          <a class="site-nav__link" href="transparencia.html">Transparência</a>
+          <a class="btn btn--primary btn--sm" href="#passos">Começar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="section section--tight">
+        <div class="shell shell--narrow">
+          <p class="type-overline section__eyebrow">Instalação</p>
+          <h1 class="type-h1">Colocar o Tainá no ar.</h1>
+          <p class="type-body section__lede mt-4">
+            Este guia assume que você não é técnico: nunca abriu um terminal,
+            ou abriu mas nunca instalou nada. Do começo ao fim, sem ajuda de
+            ninguém, em menos de 30 minutos.
+          </p>
+
+          <div class="tabs mt-8" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="Onde instalar">
+              <button
+                class="tab"
+                role="tab"
+                id="tab-hardware"
+                aria-controls="panel-hardware"
+                aria-selected="true"
+                type="button"
+              >
+                Máquina própria
+              </button>
+              <button
+                class="tab"
+                role="tab"
+                id="tab-vps"
+                aria-controls="panel-vps"
+                aria-selected="false"
+                type="button"
+              >
+                VPS
+              </button>
+            </div>
+            <div
+              class="tabs__panel"
+              role="tabpanel"
+              id="panel-hardware"
+              aria-labelledby="tab-hardware"
+            >
+              <p class="lede">
+                Um Raspberry Pi 5 ou um mini PC, ligado 24 horas por dia. No
+                Raspberry Pi, o binário da CLI é o
+                <code class="type-mono-sm">aarch64</code>; num mini PC, o
+                <code class="type-mono-sm">x86_64</code>.
+              </p>
+            </div>
+            <div
+              class="tabs__panel"
+              role="tabpanel"
+              id="panel-vps"
+              aria-labelledby="tab-vps"
+              hidden
+            >
+              <p class="lede">
+                Um servidor na nuvem, com IP público. Na VPS, o binário da CLI
+                é o <code class="type-mono-sm">x86_64</code>. Aqui faz sentido
+                já subir com o domínio da comunidade.
+              </p>
+            </div>
+          </div>
+
+          <div class="callout callout--brand mt-8">
+            <span class="callout__icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+              </svg>
+            </span>
+            <p>
+              Se você só quer experimentar numa caixa local, pare depois de
+              criar a comunidade. Domínio, acesso remoto e disco de backup são
+              para quando a comunidade for usar de verdade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="passos">
+        <div class="shell shell--narrow">
+          <div class="steps">
+            <!-- passo 1 -->
+            <div class="step">
+              <h2 class="step__title">Instale o Docker</h2>
+              <div class="step__body">
+                <p>
+                  O Tainá roda dentro do Docker. Isso mantém o resto da máquina
+                  limpo e faz a atualização ser um comando só. No Linux e no
+                  Raspberry Pi OS, cole o bloco abaixo e aperte Enter:
+                </p>
+                <div class="code">
+                  <div class="code__head">
+                    <span class="code__label">Terminal</span>
+                    <button class="copy-btn" type="button" data-copy>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      <span data-copy-label>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code>curl -fsSL https://get.docker.com | sh</code></pre>
+                </div>
+                <p>
+                  O script pergunta se quer adicionar o Docker ao grupo de
+                  administradores. Responda que sim e abra o terminal de novo
+                  para valer nesta sessão. Confira com
+                  <code class="type-mono-sm">docker --version</code>: uma linha
+                  com o número de versão, e está pronto.
+                </p>
+              </div>
+            </div>
+
+            <!-- passo 2 -->
+            <div class="step">
+              <h2 class="step__title">Instale a CLI do Tainá</h2>
+              <div class="step__body">
+                <p>
+                  A CLI é o programa que opera a caixa: instala, atualiza,
+                  mostra os logs e faz o backup. Baixe o binário da
+                  <a
+                    class="text-brand"
+                    href="https://github.com/taina-labs/oka/releases"
+                    >página de releases do Oka</a
+                  >
+                  para a arquitetura da sua caixa e instale:
+                </p>
+                <div class="code">
+                  <div class="code__head">
+                    <span class="code__label">Máquina própria (aarch64)</span>
+                    <button class="copy-btn" type="button" data-copy>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      <span data-copy-label>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code>sudo install -m755 taina-aarch64-linux /usr/local/bin/taina
+taina version</code></pre>
+                </div>
+                <div class="code">
+                  <div class="code__head">
+                    <span class="code__label">VPS (x86_64)</span>
+                    <button class="copy-btn" type="button" data-copy>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      <span data-copy-label>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code>sudo install -m755 taina-x86_64-linux /usr/local/bin/taina
+taina version</code></pre>
+                </div>
+                <p>
+                  O último comando deve imprimir algo como
+                  <code class="type-mono-sm">taina 0.1.0</code>. Se imprimir,
+                  está pronto.
+                </p>
+              </div>
+            </div>
+
+            <!-- passo 3 -->
+            <div class="step">
+              <h2 class="step__title">Instale o Tainá</h2>
+              <div class="step__body">
+                <p>
+                  A forma normal é baixar a imagem pronta. O
+                  <code class="type-mono-sm">setup</code> confere o Docker,
+                  sorteia o segredo das sessões, sobe o container com o banco
+                  da comunidade e espera o aplicativo responder que está
+                  saudável:
+                </p>
+                <div class="code">
+                  <div class="code__head">
+                    <span class="code__label">Terminal</span>
+                    <button class="copy-btn" type="button" data-copy>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      <span data-copy-label>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code>taina setup</code></pre>
+                </div>
+                <p>
+                  Ele escreve um arquivo <code class="type-mono-sm">taina.conf</code>
+                  com o segredo. Guarde esse arquivo com cuidado: quem tem ele
+                  tem acesso à caixa. Rodar o comando de novo não sobrescreve
+                  nada. No final, ele imprime o endereço para o próximo passo.
+                </p>
+                <div class="callout">
+                  <span class="callout__icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="m12 3 9 16H3z" />
+                      <path d="M12 9v4" />
+                      <path d="M12 17h.01" />
+                    </svg>
+                  </span>
+                  <p>
+                    Se o <code class="type-mono-sm">setup</code> reclamar que a
+                    imagem não está disponível, dá para montá-la na própria
+                    caixa a partir do código com o
+                    <code class="type-mono-sm">build-image.sh</code> do Oka. Aí
+                    rode
+                    <code class="type-mono-sm">TAINA_IMAGE=taina:local taina setup</code>.
+                    O guia completo tem o passo a passo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- passo 4 -->
+            <div class="step">
+              <h2 class="step__title">Crie a comunidade</h2>
+              <div class="step__body">
+                <p>
+                  Abra no navegador o endereço que o
+                  <code class="type-mono-sm">setup</code> imprimiu, terminando
+                  em <code class="type-mono-sm">/setup</code>. Vão aparecer três
+                  telas:
+                </p>
+                <ul class="type-body-sm">
+                  <li>
+                    <strong>Nome da comunidade.</strong> Cada instância é uma
+                    comunidade só, e o nome é definitivo para sempre.
+                  </li>
+                  <li>
+                    <strong>Quem cuida da máquina.</strong> Um nome de usuário,
+                    um nome de exibição e uma senha. Essa pessoa é a zeladora,
+                    não administradora.
+                  </li>
+                  <li>
+                    <strong>Armazenamento.</strong> O Tainá mostra onde os
+                    arquivos vão ficar e quanto espaço livre existe.
+                  </li>
+                </ul>
+                <p>
+                  Depois do último passo você entra logado. A comunidade foi
+                  criada e você é a primeira pessoa dela.
+                </p>
+              </div>
+            </div>
+
+            <!-- passo 5 -->
+            <div class="step">
+              <h2 class="step__title">Convide a primeira pessoa</h2>
+              <div class="step__body">
+                <p>
+                  No menu, abra <strong>Membros</strong> e depois
+                  <strong>Convidar</strong>. O Tainá mostra um link de convite e
+                  um QR code. A pessoa abre e cria a conta dela. Não existe
+                  e-mail no Tainá, e isso é uma decisão: menos uma senha
+                  guardada em servidor de terceiro.
+                </p>
+              </div>
+            </div>
+
+            <!-- passo 6 -->
+            <div class="step">
+              <h2 class="step__title">Acesse de fora da rede</h2>
+              <div class="step__body">
+                <p>
+                  Dentro da rede local o endereço já funciona. De fora, o
+                  caminho que a gente recomenda é o Tailscale: ele dá um
+                  endereço seguro à caixa, com HTTPS de verdade, sem abrir
+                  porta nenhuma. Instale o Tailscale na caixa e no aparelho de
+                  quem vai acessar, entre na mesma conta nos dois e rode:
+                </p>
+                <div class="code">
+                  <div class="code__head">
+                    <span class="code__label">Terminal</span>
+                    <button class="copy-btn" type="button" data-copy>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      <span data-copy-label>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code>tailscale serve --bg 4000</code></pre>
+                </div>
+                <p>
+                  Depois, escreva esse endereço no
+                  <code class="type-mono-sm">TAINA_DOMAIN</code> do
+                  <code class="type-mono-sm">taina.conf</code> e rode
+                  <code class="type-mono-sm">taina update</code>, para que os
+                  convites saiam com ele. O
+                  <a
+                    class="text-brand"
+                    href="https://github.com/taina-labs/tekoa/blob/main/guias/acesso-remoto.md"
+                    >guia de acesso remoto</a
+                  >
+                  tem as outras opções, como o seu domínio com Let's Encrypt.
+                </p>
+              </div>
+            </div>
+
+            <!-- passo 7 -->
+            <div class="step">
+              <h2 class="step__title">Ligue o backup</h2>
+              <div class="step__body">
+                <p>
+                  O backup vem desligado. Uma comunidade de verdade precisa
+                  dele ligado, e precisa de uma cópia em outro lugar, não só no
+                  mesmo disco. Monte um disco externo, dê a pasta ao usuário do
+                  container e aponte o backup para ela:
+                </p>
+                <div class="code">
+                  <div class="code__head">
+                    <span class="code__label">Terminal</span>
+                    <button class="copy-btn" type="button" data-copy>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      <span data-copy-label>Copiar</span>
+                    </button>
+                  </div>
+                  <pre><code>sudo chown 65534:65534 /mnt/backup
+taina backup --out /mnt/backup</code></pre>
+                </div>
+                <p>
+                  No <code class="type-mono-sm">taina.conf</code>, descomente
+                  <code class="type-mono-sm">TAINA_BACKUP_DIR=/mnt/backup</code>
+                  e mude <code class="type-mono-sm">TAINA_BACKUP_ENABLED=true</code>.
+                  Rode <code class="type-mono-sm">taina update</code> e, a partir
+                  daí, um backup é feito todo dia. E ensaie a restauração: um
+                  backup que nunca foi testado não é backup.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout--brand mt-10">
+            <span class="callout__icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+              </svg>
+            </span>
+            <p>
+              Para atualizar depois, é um comando só:
+              <code class="type-mono-sm">taina update</code>. Ele baixa a
+              versão nova, recria o container e confere a saúde. As migrações
+              de banco rodam sozinhas no boot.
+            </p>
+          </div>
+
+          <div class="hero__actions">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/taina-labs/tekoa/blob/main/guias/instalacao.md"
+              >Guia completo no Tekoá</a
+            >
+            <a
+              class="btn btn--secondary"
+              href="https://github.com/taina-labs/tekoa/blob/main/guias/runbook-backup-restore.md"
+              >Runbook de backup</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="index.html">
+              <svg
+                class="brand__mark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="brand__name">Tainá</span>
+            </a>
+            <p>
+              A nuvem privada da comunidade. Tainá é a estrela da manhã em
+              Tupi-Guarani: a que guia quem busca independência digital.
+            </p>
+          </div>
+          <nav class="site-footer__col" aria-label="Projeto">
+            <h2>Projeto</h2>
+            <ul>
+              <li>
+                <a href="https://github.com/taina-labs/taina">Código</a>
+              </li>
+              <li>
+                <a href="https://github.com/taina-labs/tekoa/blob/main/ROADMAP.md"
+                  >Roadmap</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/taina-labs/taina/blob/main/LICENSE"
+                  >Licença (AGPL)</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="site-footer__col" aria-label="Aprender">
+            <h2>Aprender</h2>
+            <ul>
+              <li><a href="instalar.html">Instalação</a></li>
+              <li><a href="transparencia.html">Transparência e LGPD</a></li>
+              <li>
+                <a href="https://github.com/taina-labs/tekoa">Documentação</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-footer__legal">
+          <span>Código sob GNU AGPL v3.0.</span>
+          <span>Este site não usa cookies nem rastreio.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

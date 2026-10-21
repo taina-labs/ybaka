@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tainá: a nuvem privada da sua comunidade</title>
+    <meta
+      name="description"
+      content="O Tainá é uma nuvem privada e auto-hospedada para comunidades: arquivos e fotos numa caixa que é da própria comunidade. Código aberto, sem aluguel mensal, sem os dados saindo da sua mão."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/ybaka.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z' fill='%23f2a65a'/%3E%3C/svg%3E"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html">
+          <svg
+            class="brand__mark"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"
+              fill="currentColor"
+            />
+          </svg>
+          <span class="brand__name">Tainá</span>
+        </a>
+        <nav class="site-nav" aria-label="Principal">
+          <a class="site-nav__link site-nav__link--optional" href="#como-funciona"
+            >Como funciona</a
+          >
+          <a class="site-nav__link" href="transparencia.html">Transparência</a>
+          <a class="btn btn--primary btn--sm" href="instalar.html">Instalar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- herói -->
+      <section class="hero">
+        <svg
+          class="hero__star hide-mobile"
+          width="120"
+          height="120"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"
+            fill="currentColor"
+          />
+        </svg>
+        <div class="shell">
+          <div class="hero__inner">
+            <p class="type-overline section__eyebrow">
+              Nuvem privada da comunidade
+            </p>
+            <h1 class="type-display hero__title">
+              A nuvem que é da sua comunidade.
+            </h1>
+            <p class="type-body hero__lede">
+              O Tainá guarda os arquivos e as fotos de uma comunidade numa
+              caixa que é dela. Sem depender de empresa nenhuma, sem aluguel
+              mensal, sem os seus dados saindo da sua mão.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="instalar.html"
+                >Instalar o Tainá</a
+              >
+              <a
+                class="btn btn--secondary"
+                href="https://github.com/taina-labs/taina"
+                >Ver o código</a
+              >
+            </div>
+            <div class="hero__badges">
+              <span class="badge badge--brand">Código aberto, AGPL</span>
+              <span class="badge">Raspberry Pi, mini PC ou VPS</span>
+              <span class="badge">Feito no Brasil</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- o problema -->
+      <section class="section section--alt">
+        <div class="shell shell--narrow">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">O problema</p>
+            <h2 class="type-h2 section__title">
+              Hoje, as memórias da comunidade moram na casa dos outros.
+            </h2>
+          </div>
+          <div class="stack">
+            <p class="lede">
+              As fotos da família, os documentos do coletivo, os vídeos da
+              festa: quase tudo fica em servidores que não são seus, sob regras
+              que você não escreveu e um preço que você não decide.
+            </p>
+            <p class="lede">
+              O Tainá parte de outra pergunta: e se a nuvem fosse uma caixa na
+              casa de alguém da própria comunidade?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- o que é -->
+      <section class="section">
+        <div class="shell">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">O que é</p>
+            <h2 class="type-h2 section__title">
+              Uma caixa por comunidade. Uma Tekoa por instância.
+            </h2>
+            <p class="type-body section__lede">
+              O Tainá roda no hardware da própria comunidade: um Raspberry Pi,
+              um mini PC ou uma VPS. Cada instalação é uma comunidade só, com o
+              nome dela, as pessoas dela e os dados dela. Sem contas
+              compartilhadas entre comunidades, sem descoberta pública, sem
+              feed de ninguém.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--3">
+            <article class="feature-card">
+              <span class="service-square service-square--ybira">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Ybira</h3>
+              <p class="feature-card__body">
+                Os arquivos da comunidade. Navegar, enviar e baixar, com a
+                mesma regra de casa e praça em tudo.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="service-square service-square--jaci">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="9" cy="9" r="2" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Jaci</h3>
+              <p class="feature-card__body">
+                A galeria de fotos sobre os arquivos: os ciclos, as festas e a
+                memória da comunidade num lugar só.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="service-square service-square--maraca">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Maracá</h3>
+              <p class="feature-card__body">
+                Identidade, convites e acesso. As pessoas entram por convite,
+                não por cadastro aberto.
+              </p>
+            </article>
+          </div>
+
+          <div class="callout callout--brand mt-6">
+            <span class="callout__icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+              </svg>
+            </span>
+            <p>
+              Chat (Guará), streaming (Araci) e o resto do ecossistema são
+              visão, não promessa. O que existe hoje é o cofre de arquivos e
+              fotos da comunidade, e é nele que a gente trabalha.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- como funciona -->
+      <section class="section section--alt" id="como-funciona">
+        <div class="shell">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Como funciona</p>
+            <h2 class="type-h2 section__title">
+              Comunitário de verdade, com o poder à vista.
+            </h2>
+            <p class="type-body section__lede">
+              Duas zonas, papéis claros e um registro de tudo. Nada de
+              caixinha preta: o que o sistema e as pessoas fazem fica legível.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--2">
+            <article class="pillar">
+              <span class="service-square service-square--neutral">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <path d="M9 22V12h6v10" />
+                </svg>
+              </span>
+              <div class="pillar__body">
+                <h3 class="pillar__title">Casa</h3>
+                <p class="pillar__text">
+                  O espaço privado de cada morador. Por padrão, só o dono lê.
+                  Para outra pessoa abrir, ela pede acesso e você decide.
+                </p>
+              </div>
+            </article>
+
+            <article class="pillar">
+              <span class="service-square service-square--neutral">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </span>
+              <div class="pillar__body">
+                <h3 class="pillar__title">Praça</h3>
+                <p class="pillar__text">
+                  O comum da comunidade. O que você publica ali, todos os
+                  moradores veem. Colocar na praça já é o consentimento, e dá
+                  para tirar depois.
+                </p>
+              </div>
+            </article>
+
+            <article class="pillar">
+              <span class="service-square service-square--neutral">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </span>
+              <div class="pillar__body">
+                <h3 class="pillar__title">Zelador(a)</h3>
+                <p class="pillar__text">
+                  Quem cuida da máquina: o disco, os backups, as atualizações
+                  e os convites. Nunca dono, nunca chefe. Não tem poder de ler
+                  a casa de ninguém.
+                </p>
+              </div>
+            </article>
+
+            <article class="pillar">
+              <span class="service-square service-square--neutral">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M8 6h13" />
+                  <path d="M8 12h13" />
+                  <path d="M8 18h13" />
+                  <path d="M3 6h.01" />
+                  <path d="M3 12h.01" />
+                  <path d="M3 18h.01" />
+                </svg>
+              </span>
+              <div class="pillar__body">
+                <h3 class="pillar__title">Mural</h3>
+                <p class="pillar__text">
+                  O registro do que aconteceu: convites, publicações na praça,
+                  acessos concedidos. Todo poder fica à vista de todos.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="muted type-body-sm mt-6">
+            Sem e-mail por decisão: menos uma senha guardada em servidor de
+            terceiro. As pessoas entram por um link ou um QR code que você
+            gera.
+          </p>
+        </div>
+      </section>
+
+      <!-- alternativa -->
+      <section class="section">
+        <div class="shell">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Alternativa a quê</p>
+            <h2 class="type-h2 section__title">Onde os seus dados ficam.</h2>
+            <p class="type-body section__lede">
+              Sem atacar ninguém. É só uma comparação honesta de onde a sua
+              informação mora e quem decide sobre ela.
+            </p>
+          </div>
+
+          <div class="compare-wrap">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Nuvem pública</th>
+                  <th scope="col">Nuvem privada gerenciada</th>
+                  <th scope="col" class="compare__us">Tainá</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Onde ficam os dados</th>
+                  <td>Data centers da empresa</td>
+                  <td>Data center de um provedor</td>
+                  <td class="compare__us">Na caixa da comunidade</td>
+                </tr>
+                <tr>
+                  <th scope="row">Quem manda nos dados</th>
+                  <td>A empresa</td>
+                  <td>O provedor</td>
+                  <td class="compare__us">A comunidade</td>
+                </tr>
+                <tr>
+                  <th scope="row">Custo</th>
+                  <td>Assinatura mensal por pessoa</td>
+                  <td>Assinatura mensal</td>
+                  <td class="compare__us">O hardware, uma vez</td>
+                </tr>
+                <tr>
+                  <th scope="row">Quem cuida</th>
+                  <td>A empresa</td>
+                  <td>O provedor</td>
+                  <td class="compare__us">A própria comunidade</td>
+                </tr>
+                <tr>
+                  <th scope="row">Código</th>
+                  <td>Fechado</td>
+                  <td>Fechado</td>
+                  <td class="compare__us">Aberto, AGPL</td>
+                </tr>
+                <tr>
+                  <th scope="row">Criptografia de ponta a ponta</th>
+                  <td>Sim, nas contas deles</td>
+                  <td>Depende do provedor</td>
+                  <td class="compare__us">Ainda não, está no caminho</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- privacidade e LGPD -->
+      <section class="section section--alt">
+        <div class="shell shell--narrow">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Privacidade e LGPD</p>
+            <h2 class="type-h2 section__title">
+              Promessa de software, não cadeado matemático.
+            </h2>
+          </div>
+          <div class="stack">
+            <p class="lede">
+              Hoje o Tainá não criptografa os arquivos. A privacidade da casa é
+              uma promessa de software e de confiança: você confia em quem
+              hospeda a caixa, como confiaria em quem guarda as chaves da
+              sede. A criptografia de ponta a ponta está no caminho, e a gente
+              não finge que já existe.
+            </p>
+            <p class="lede">
+              O que o Tainá já garante: os dados ficam na caixa da comunidade e
+              nada sai dela. Não há telemetria telefonando para casa, não há
+              conta em serviço de terceiro, não há rastreio de ninguém.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--secondary" href="transparencia.html"
+                >Ler a página de transparência e LGPD</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- instalação rápida -->
+      <section class="section" id="instalar">
+        <div class="shell">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Instalação</p>
+            <h2 class="type-h2 section__title">
+              No ar em menos de 30 minutos.
+            </h2>
+            <p class="type-body section__lede">
+              Funciona na máquina da comunidade ou numa VPS. Os comandos são os
+              mesmos, só muda a arquitetura do binário.
+            </p>
+          </div>
+
+          <div class="tabs" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="Onde instalar">
+              <button
+                class="tab"
+                role="tab"
+                id="tab-hardware"
+                aria-controls="panel-hardware"
+                aria-selected="true"
+                type="button"
+              >
+                Máquina própria
+              </button>
+              <button
+                class="tab"
+                role="tab"
+                id="tab-vps"
+                aria-controls="panel-vps"
+                aria-selected="false"
+                type="button"
+              >
+                VPS
+              </button>
+            </div>
+
+            <div
+              class="tabs__panel"
+              role="tabpanel"
+              id="panel-hardware"
+              aria-labelledby="tab-hardware"
+            >
+              <div class="code">
+                <div class="code__head">
+                  <span class="code__label">Terminal</span>
+                  <button class="copy-btn" type="button" data-copy>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      />
+                    </svg>
+                    <span data-copy-label>Copiar</span>
+                  </button>
+                </div>
+                <pre><code><span class="code__prompt"># 1. Instale o Docker</span>
+curl -fsSL https://get.docker.com | sh
+
+<span class="code__prompt"># 2. Baixe a CLI do Tainá (Raspberry Pi: aarch64)</span>
+<span class="code__prompt">#    github.com/taina-labs/oka/releases</span>
+sudo install -m755 taina-aarch64-linux /usr/local/bin/taina
+
+<span class="code__prompt"># 3. Suba a caixa</span>
+taina setup</code></pre>
+              </div>
+            </div>
+
+            <div
+              class="tabs__panel"
+              role="tabpanel"
+              id="panel-vps"
+              aria-labelledby="tab-vps"
+              hidden
+            >
+              <div class="code">
+                <div class="code__head">
+                  <span class="code__label">Terminal</span>
+                  <button class="copy-btn" type="button" data-copy>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      />
+                    </svg>
+                    <span data-copy-label>Copiar</span>
+                  </button>
+                </div>
+                <pre><code><span class="code__prompt"># 1. Instale o Docker</span>
+curl -fsSL https://get.docker.com | sh
+
+<span class="code__prompt"># 2. Baixe a CLI do Tainá (VPS: x86_64)</span>
+<span class="code__prompt">#    github.com/taina-labs/oka/releases</span>
+sudo install -m755 taina-x86_64-linux /usr/local/bin/taina
+
+<span class="code__prompt"># 3. Suba a caixa, já com o seu domínio</span>
+taina setup --domain nuvem.suacomunidade.org</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <p class="muted type-body-sm mt-6">
+            O HTTPS não é automático: quem expõe a caixa é você. O caminho mais
+            simples é o Tailscale, que dá um endereço seguro sem abrir porta
+            nenhuma. O
+            <a
+              class="text-brand"
+              href="https://github.com/taina-labs/tekoa/blob/main/guias/acesso-remoto.md"
+              >guia de acesso remoto</a
+            >
+            explica todas as opções.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="instalar.html"
+              >Ver o guia completo</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- requisitos -->
+      <section class="section section--tight section--alt">
+        <div class="shell">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Requisitos</p>
+            <h2 class="type-h2 section__title">O que você vai precisar.</h2>
+          </div>
+          <div class="card-grid card-grid--2">
+            <article class="feature-card">
+              <h3 class="feature-card__title">Uma máquina ligada 24 horas</h3>
+              <p class="feature-card__body">
+                Um Raspberry Pi 5, um mini PC ou uma VPS. O que importa é ficar
+                no ar para a comunidade acessar quando quiser.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3 class="feature-card__title">Docker e a CLI do Tainá</h3>
+              <p class="feature-card__body">
+                O Tainá roda dentro do Docker, e a CLI opera a caixa: instala,
+                atualiza, faz backup e mostra os logs.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3 class="feature-card__title">Um disco de verdade</h3>
+              <p class="feature-card__body">
+                Um pendrive, um SSD USB ou um disco externo. Cartão SD comum é
+                o pior lugar para guardar os arquivos de uma comunidade.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3 class="feature-card__title">Um pouco de paciência</h3>
+              <p class="feature-card__body">
+                Do zero ao ar leva menos de 30 minutos. O guia é escrito para
+                quem nunca abriu um terminal.
+              </p>
+            </article>
+          </div>
+          <div class="hero__actions">
+            <a
+              class="btn btn--secondary"
+              href="https://github.com/taina-labs/tekoa/blob/main/guias/compras-hardware.md"
+              >Guia de hardware</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- status -->
+      <section class="section">
+        <div class="shell shell--narrow">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Status</p>
+            <h2 class="type-h2 section__title">
+              Estamos no começo, e dizemos isso.
+            </h2>
+          </div>
+          <div class="stack">
+            <p class="lede">
+              O Tainá está em alfa. O cofre de arquivos e fotos da comunidade
+              funciona hoje. O resto do ecossistema é visão. O roadmap diz, sem
+              maquiagem, o que está pronto e o que ainda falta.
+            </p>
+            <div class="hero__actions">
+              <a
+                class="btn btn--secondary"
+                href="https://github.com/taina-labs/tekoa/blob/main/ROADMAP.md"
+                >Ver o roadmap</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- comunidade -->
+      <section class="section section--alt">
+        <div class="shell shell--narrow">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Comunidade</p>
+            <h2 class="type-h2 section__title">Feito por gente, para gente.</h2>
+          </div>
+          <div class="stack">
+            <p class="lede">
+              O Tainá é código aberto sob a licença AGPL. Você pode ler,
+              copiar, mudar e rodar como quiser. Quem quiser ajudar a construir,
+              o caminho está aberto.
+            </p>
+            <div class="hero__actions">
+              <a
+                class="btn btn--secondary"
+                href="https://github.com/taina-labs/taina"
+                >GitHub</a
+              >
+              <a
+                class="btn btn--secondary"
+                href="https://github.com/taina-labs/tekoa"
+                >Documentação</a
+              >
+              <a
+                class="btn btn--secondary"
+                href="https://github.com/taina-labs/tekoa/blob/main/CONTRIBUTING.md"
+                >Como contribuir</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- perguntas frequentes -->
+      <section class="section">
+        <div class="shell shell--narrow">
+          <div class="section__head">
+            <p class="type-overline section__eyebrow">Perguntas</p>
+            <h2 class="type-h2 section__title">O que costumam perguntar.</h2>
+          </div>
+
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Preciso saber mexer em Linux?</summary>
+              <p class="faq__answer">
+                Não. O guia de instalação é escrito para quem nunca abriu um
+                terminal: você cola um bloco de comandos, aperta Enter e segue
+                as telas. Se algo travar, o guia diz o que fazer.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary>Vocês conseguem ver os meus arquivos?</summary>
+              <p class="faq__answer">
+                Quem cuida da caixa (o zelador) tem acesso à máquina, mas não
+                tem atalho para ler a sua casa: abrir exige o seu pedido e a
+                sua aprovação. Importante ser honesto: isso é uma promessa de
+                software, não criptografia. A criptografia de ponta a ponta
+                ainda está no caminho.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary>É grátis?</summary>
+              <p class="faq__answer">
+                O software é livre e gratuito. O que tem custo é o hardware e a
+                luz, que ficam com a comunidade. Não há assinatura por pessoa
+                nem aluguel mensal para ninguém.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary>E se a caixa cair ou o disco queimar?</summary>
+              <p class="faq__answer">
+                Por isso o backup existe e vem com o Tainá. Ele fica desligado
+                de fábrica e a gente recomenda ligar: um backup que nunca foi
+                testado não é backup. O runbook mostra como fazer e como
+                ensaiar a restauração.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary>Dá para usar em mais de uma comunidade?</summary>
+              <p class="faq__answer">
+                Cada caixa é uma comunidade só. Isso é de propósito: sem
+                descoberta pública, sem feed entre comunidades, sem troca de
+                contexto. Se você tem outra comunidade, ela tem a caixa dela.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary>Funciona sem internet?</summary>
+              <p class="faq__answer">
+                A caixa roda na rede local, então dá para acessar de dentro de
+                casa mesmo sem internet. Para acessar de fora, use o Tailscale
+                ou um domínio com proxy na frente.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="index.html">
+              <svg
+                class="brand__mark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="brand__name">Tainá</span>
+            </a>
+            <p>
+              A nuvem privada da comunidade. Tainá é a estrela da manhã em
+              Tupi-Guarani: a que guia quem busca independência digital.
+            </p>
+          </div>
+          <nav class="site-footer__col" aria-label="Projeto">
+            <h2>Projeto</h2>
+            <ul>
+              <li>
+                <a href="https://github.com/taina-labs/taina">Código</a>
+              </li>
+              <li>
+                <a href="https://github.com/taina-labs/tekoa/blob/main/ROADMAP.md"
+                  >Roadmap</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/taina-labs/taina/blob/main/LICENSE"
+                  >Licença (AGPL)</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="site-footer__col" aria-label="Aprender">
+            <h2>Aprender</h2>
+            <ul>
+              <li><a href="instalar.html">Instalação</a></li>
+              <li><a href="transparencia.html">Transparência e LGPD</a></li>
+              <li>
+                <a href="https://github.com/taina-labs/tekoa">Documentação</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-footer__legal">
+          <span>Código sob GNU AGPL v3.0.</span>
+          <span>Este site não usa cookies nem rastreio.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

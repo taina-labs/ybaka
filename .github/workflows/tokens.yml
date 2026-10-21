@@ -1,0 +1,28 @@
+name: tokens
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  sincronia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixa os tokens do repositorio do Taina
+        run: |
+          curl -fsSL \
+            https://raw.githubusercontent.com/taina-labs/taina/main/assets/css/tokens.css \
+            -o /tmp/tokens.css
+
+      - name: Confere que styles/tokens.css esta em sincronia
+        run: |
+          if ! diff -u /tmp/tokens.css styles/tokens.css; then
+            echo "::error::styles/tokens.css divergiu da fonte no Taina. Rode ./scripts/sync-tokens.sh."
+            exit 1
+          fi
+          echo "tokens em sincronia."
