@@ -55,7 +55,7 @@
   gap: var(--space-4);
 }
 
-.flow > * + * {
+.flow>*+* {
   margin-top: var(--space-4);
 }
 
@@ -74,15 +74,19 @@
 .mt-2 {
   margin-top: var(--space-2);
 }
+
 .mt-4 {
   margin-top: var(--space-4);
 }
+
 .mt-6 {
   margin-top: var(--space-6);
 }
+
 .mt-8 {
   margin-top: var(--space-8);
 }
+
 .mt-10 {
   margin-top: var(--space-10);
 }
@@ -229,11 +233,9 @@
   overflow: hidden;
   border-bottom: var(--border-hairline) solid var(--border-subtle);
   background:
-    radial-gradient(
-      130% 90% at 50% -20%,
+    radial-gradient(130% 90% at 50% -20%,
       var(--surface-tint-brand),
-      transparent 62%
-    ),
+      transparent 62%),
     var(--bg-app);
 }
 
@@ -302,6 +304,7 @@
   .hero__inner {
     padding-block: var(--space-16) var(--space-16);
   }
+
   .hero__star {
     top: var(--space-12);
     right: var(--space-10);
@@ -320,6 +323,7 @@
   .card-grid--2 {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .card-grid--3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -370,14 +374,17 @@
   background: var(--service-ybira-soft);
   color: var(--service-ybira-tint);
 }
+
 .service-square--jaci {
   background: var(--service-jaci-soft);
   color: var(--service-jaci-tint);
 }
+
 .service-square--maraca {
   background: var(--service-maraca-soft);
   color: var(--service-maraca-tint);
 }
+
 .service-square--neutral {
   background: var(--surface-raised);
   color: var(--text-muted);
@@ -631,7 +638,7 @@
   font-size: var(--font-size-sm);
 }
 
-.step__body > * + * {
+.step__body>*+* {
   margin-top: var(--space-3);
 }
 
@@ -761,7 +768,7 @@
   max-width: var(--measure);
 }
 
-.prose > * + * {
+.prose>*+* {
   margin-top: var(--space-4);
 }
 
@@ -793,6 +800,34 @@
   color: var(--brand-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* ---------- glossário ---------- */
+
+.glossary {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .glossary--cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5) var(--space-8);
+  }
+}
+
+.glossary__term {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  scroll-margin-top: var(--space-16);
+}
+
+.glossary__def {
+  margin: var(--space-1) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
 }
 
 /* navegação "pular para o conteúdo" */

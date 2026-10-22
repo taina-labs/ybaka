@@ -12,9 +12,10 @@ comando e alternar abas).
 
 | Rota | O que é |
 | --- | --- |
-| `index.html` | Landing: o que é o Tainá, como funciona, comparação, instalação rápida, FAQ |
+| `index.html` | Landing: o que é o Tainá, os nomes, como funciona, comparação, o futuro, instalação rápida, FAQ |
 | `instalar.html` | Guia de instalação passo a passo (máquina própria ou VPS) |
 | `transparencia.html` | Honestidade e LGPD: o que existe, o que falta, o que não prometemos |
+| `glossario.html` | Os termos técnicos, um por linha |
 
 ## Rodar localmente
 
@@ -62,6 +63,7 @@ e a convenção de nomes da
 index.html            landing
 instalar.html         guia de instalação
 transparencia.html    transparência e LGPD
+glossario.html        termos técnicos, um por linha
 styles/
   tokens.css          design tokens (vendorizado do Tainá)
   base.css            fontes, reset, estilos de tipo
