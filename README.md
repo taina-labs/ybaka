@@ -57,27 +57,6 @@ O tom de voz e o vocabulário seguem o
 e a convenção de nomes da
 [RFC 003](https://github.com/taina-labs/tekoa/blob/main/tecnico/RFC_003_GOVERNANCA_E_TRANSPARENCIA.md).
 
-## Estrutura
-
-```
-index.html            landing
-instalar.html         guia de instalação
-transparencia.html    transparência e LGPD
-glossario.html        termos técnicos, um por linha
-styles/
-  tokens.css          design tokens (vendorizado do Tainá)
-  base.css            fontes, reset, estilos de tipo
-  ybaka.css           componentes e layout do site
-fonts/                fontes variáveis auto-hospedadas (woff2)
-js/app.js             abas e botão de copiar
-scripts/sync-tokens.sh
-```
-
-## Publicar
-
-Site estático: publique com GitHub Pages, Cloudflare Pages ou qualquer host de
-arquivos, apontando para a raiz do repositório. Nenhuma configuração de build.
-
 ## Licença
 
 [GNU AGPL v3.0](LICENSE), a mesma do Tainá.
